@@ -1,0 +1,23 @@
+{
+  "name": "dataprocesspipe",
+  "version": "1.0.0",
+  "description": "process data as pipe",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "keywords": [
+    "process",
+    "data",
+    "pipe"
+  ],
+  "author": "hackingwu",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.22.2",
+    "sprintf": "^0.1.5"
+  },
+  "devDependencies": {
+    "jasmine": "^3.2.0"
+  }
+}
