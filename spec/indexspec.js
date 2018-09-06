@@ -15,11 +15,22 @@ describe("DataProcessPipe", function(){
 
     it("ts2date", function(){
       let data = {"ts": "1536220630383"}
-      let value = DataProcessPipe.process(";{ts: ts2date YYYYMMDD}", data);
+      let value = DataProcessPipe.process("{ts: ts2date YYYYMMDD}", data);
       expect(value).toEqual({"ts": "20180906"});
       data = [{"ts": "1536220630383"}, {"ts": "1536220630383"}]
       value = DataProcessPipe.process("{ts: ts2date YYYYMMDD}", data);
       expect(value).toEqual([{"ts": "20180906"}, {"ts": "20180906"}])
     })
+
+    it("complex", function(){
+      let data =   [
+        {"ts": "1536220630383"},
+        {"ts": "1536220631383"},
+        {"ts": "1536220632383"},
+      ]
+      let value = DataProcessPipe.process("[1, -1]  {ts: ts2date YYYYMMDD}", data);
+      console.log(value);
+    })
+
   })
 })
