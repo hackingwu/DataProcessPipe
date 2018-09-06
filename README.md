@@ -5,43 +5,45 @@ Just Write Rule Expression, Process/Format Your Data through Pipe.
 
 1. Data Selection
 
-Expression:
+  Expression:
 
-* Object, using `.` to get value by key.
+  * Object, using `.` to get value by key.
 
-* Array, using [start, end] to select element range.
+  * Array, using [start, end] to select element range.
 
 2. Data Format
 
-Expression:
+  Expression:
 
-{$column_name: built-in function chain}
-{$column_idx: built-in function chain}
+  {$column_name: built-in function chain}
+  {$column_idx: built-in function chain}
 
-Built-in Function:
+  Built-in Function:
 
-* Time
+  * Time
 
-ts2date
+  ts2date
 
-Timestamp(Milliseconds, seconds) <=> DateTime(date format (moment.js))
-...
+  Timestamp(Milliseconds, seconds) <=> DateTime(date format (moment.js))
+  ...
 
-* Text
+  * Text
 
-sprintf
+  sprintf
 
-String Format (sprintf.js)
+  String Format (sprintf.js)
 
-regexSubstr
+  regexSubstr
 
-Regex SubString
+  Regex SubString
 
-* Number
+  * Number
 
-Calculation
+  Calculation
 
 ## Example
+
+before data:
 
 <pre>
     [
@@ -51,13 +53,19 @@ Calculation
     ]
 </pre>
 
+expression:
+
+<pre>
 [1, -1] {ts: ts2date YYYYMMDD}
+</pre>
+
+after data:
 
 <pre>
 [ { ts: '20180906' }, { ts: '20180906' } ]
 </pre>
 
 
-More Example, 
+More example, look at test case.
 
 
